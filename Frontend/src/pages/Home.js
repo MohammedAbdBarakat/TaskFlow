@@ -1,7 +1,9 @@
 import {  useEffect } from 'react'
-import Day from '../components/Day'
 import { useTasksContext } from '../hooks/useTasksContext'
 import { useAuthContext } from '../hooks/useAuthContext'
+import MiniNavbar from '../components/Home page comps/MiniNavbar'
+import WeekSidebar from '../components/Home page comps/WeekSidebar'
+import Tasks from '../components/Home page comps/Tasks'
 
 const Home = () => {
     const { tasks, dispatch } = useTasksContext()
@@ -28,53 +30,8 @@ const Home = () => {
 
     return ( 
         <div className="home-container">
-            <div className="side-nav">
-                <details className="day-container" name="day">
-                    <summary>Saturday</summary>
-                    <div className="day-wrapper">
-                        <Day tasks= {tasks} />
-                    </div>
-                </details>
-
-                <details  className="day-container" name="day">
-                    <summary>Sunday</summary>
-                    <div className="day-wrapper">
-                        <Day tasks= {tasks} />
-                    </div>
-                </details>
-
-                <details  className="day-container" name="day">
-                    <summary>Monday</summary>
-                    <div className="day-wrapper">
-                        <Day tasks= {tasks} />
-                    </div>
-                </details>
-
-                <details  className="day-container" name="day">
-                    <summary>thursday</summary>
-                    <Day tasks= {tasks} />
-                </details>
-
-                <details  className="day-container" name="day">
-                    <summary>wednesday</summary>
-                    <div className="day-wrapper">
-                        <Day tasks= {tasks} />
-                    </div>
-                </details>
-
-                <details  className="day-container" name="day"> 
-                    <summary>Tuesday</summary>
-                    <div className="day-wrapper">
-                        <Day tasks= {tasks} />
-                    </div>
-                </details>
-
-                <details  className="day-container" name="day">
-                    <summary>Friday</summary>
-                    <div className="day-wrapper">
-                        <Day tasks= {tasks} />
-                    </div>
-                </details>
+            <div className="content">
+                
             </div>
         </div>
     );

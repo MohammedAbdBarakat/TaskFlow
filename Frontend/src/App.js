@@ -12,6 +12,13 @@ import Signup from "./pages/Signup";
 import About from "./pages/About";
 import Profile from "./pages/Profile";
 
+import Tasks from './components/Home page comps/Tasks'
+import Challenges from './components/Home page comps/Challenges'
+import Month from './components/Home page comps/Month'
+import Journaling from './components/Home page comps/Journaling'
+import MiniNavbar from "./components/Home page comps/MiniNavbar";
+import HomeWrapper from "./pages/HomeWrapper";
+
 function App() {
 
   const { user } = useAuthContext()
@@ -21,37 +28,75 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Navbar />
-        {user &&  <Time />}
+        {/* {user &&  <Time />} */}
         <div className="pages">
           <Routes>
-            <Route
-              path="/profile"
-              element={user ? <Profile /> : <Navigate to={"/login"} />}
-            />
             <Route 
-              path="/" 
-              element={user ? <Home /> : <Navigate to={"/about"} />}
-            />
-            <Route 
-              path="/create" 
-              element={user ? <Create /> : <Navigate to={"/login"} />}
-            />
-            <Route 
-              path="/calender" 
-              element={user ? <Calender /> : <Navigate to={"/login"} />} 
-            />
-            <Route
-              path="/about"
-              element={!user ? <About /> : <Navigate to={"/"} />}
-            />
-            <Route 
-              path="/login" 
-              element={!user ? <Login /> : <Navigate to={"/"} />} 
-            />
-            <Route 
-              path="/signup" 
-              element={!user ? <Signup /> : <Navigate to={'/'} />} 
-            />
+              path="/home/tasks" 
+              element = { user ?
+                <HomeWrapper>
+                  <Tasks  />
+                </HomeWrapper>
+                : <Navigate to={"/about"} /> }
+              />
+              <Route 
+                path="/home/month" 
+                element = { user ?
+                  <HomeWrapper>
+                    <Month />
+                  </HomeWrapper>
+                : <Navigate to={"/about"} />}
+              />
+              <Route 
+                path="/home/challenges" 
+                element = { user ?
+                  <HomeWrapper>
+                    <Challenges />
+                  </HomeWrapper>
+                  : <Navigate to={"/about"} />}
+                />
+              <Route 
+                path="/home/journaling" 
+                element = { user ?
+                  <HomeWrapper>
+                    <Journaling />
+                  </HomeWrapper>
+                  : <Navigate to={"/about"} />}
+                />
+          </Routes>
+          <Routes>
+              <Route 
+                path="/"
+                element={user ?
+                  <HomeWrapper>
+                  <Tasks />
+                  </HomeWrapper>
+                  : <Navigate to={"/about"} />}
+              />
+              <Route 
+                path="/create" 
+                element={user ? <Create /> : <Navigate to={"/login"} />}
+              />
+              <Route 
+                path="/calender" 
+                element={user ? <Calender /> : <Navigate to={"/login"} />} 
+              />
+              <Route
+                path="/about"
+                element={!user ? <About /> : <Navigate to={"/"} />}
+              />
+              <Route
+                path="/profile"
+                element={user ? <Profile /> : <Navigate to={"/login"} />}
+              />
+              <Route 
+                path="/login" 
+                element={!user ? <Login /> : <Navigate to={"/"} />} 
+              />
+              <Route 
+                path="/signup" 
+                element={!user ? <Signup /> : <Navigate to={'/'} />} 
+              />
           </Routes>
         </div>
       </BrowserRouter>
