@@ -1,0 +1,54 @@
+API Documentation:
+
+
+
+                                for Authentication:
+
+/api/login :
+     post
+        body{userName,password} 
+        resposne :{accessToken,userID,userName}
+
+/api/signup :
+     post
+        body{first/last/userName,email,password}
+        response: {result} //result contains the same as body in addition to its id.
+
+/api/logout =>get 200ok
+========================CAUTION===================
+
+    after logging in , We have verifyJWT middleware , and 
+        checkTech middleware that is check if the saved week number is same as current week number , then any request for tasks,routines..etc is allowed.
+        Otherwise it will returns a message that currentTech must be selected status(409).
+        After the selection of currentTech (updateTechnique) , it will update the saved week number in the User data.
+
+    Also , the (updateTechnique) checks the weeks if it's different it will update the technique , Otherwise it will return status(409) message.
+
+==================================================
+
+
+                                for Routines:
+
+/api/routines :
+    add routine: post{day , startDate,endDate}
+    get routines: get <= returns all the routine table
+----------------------------------------------------------------
+/api/routines/day :
+        get headers{day:day}; <=returns only the routines that matched the day.
+
+----------------------------------------------------------------
+/api/routines/item :
+    update Routine Item: 
+        patch
+			body:{day , routineItemId, title? , startDate? , endDate?}
+
+    delete Routine Item: delete
+			body:{day , routineItemId}
+----------------------------------------------------------------
+
+
+
+                                for Techniques:
+/api/techniques/ :
+        get
+        post techq body:{technique} //For updating after one week passed
