@@ -1,0 +1,400 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&family=VT323&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Caveat:wght@400..700&family=Edu+AU+VIC+WA+NT+Hand:wght@400..700&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Shantell+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=PT+Mono&family=Shadows+Into+Light&display=swap');/* layout */
+@import url('https://fonts.googleapis.com/css2?family=Handjet:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Shantell+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+:root{
+    scroll-behavior: smooth;
+    /*Basic  */
+    --primary: #E3A5C7;
+    --secondary: #B692C2;
+
+    --text: #694F8E;
+    --text0: #9676c4;
+    --text2: #4b1f88;
+    --text3: #201929;
+    --text4: #791b2f;
+    --error: #e7195a;
+
+    
+    --body-bg-color: #FFDFD6;
+
+    --box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    --bg-linear1: linear-gradient(90deg, #E3A5C7 0%, #694F8E  100%);
+
+    --FF-Shantell:"Shantell Sans";
+    --FF-PT-Mono:"PT Mono";
+    --FF-Lato: "Lato";
+}
+
+
+@layer utilities{ 
+    /* For menu button that in Nav elements */
+    .toggle-btn{
+        @apply 
+        [&>#iconic::before]:translate-y-0 [&>#iconic::before]:rotate-45 
+        [&>#iconic::after]:-translate-y-0 [&>#iconic::after]:-rotate-45 
+        [&>#iconic]:bg-transparent [&>#iconic]:rotate-[720deg] 
+    }
+}
+@layer components{
+    .bg_linear1{
+        background:linear-gradient(200deg, #E3A5C7 0%, #a75e94  100%);    
+    }
+    ::-webkit-scrollbar {
+        width: 0.3rem;
+    }
+    ::-webkit-scrollbar-track {
+        background-color: var(--text);
+        opacity: 0.7;
+    }
+    ::-webkit-scrollbar-thumb {
+        background: var(--text);
+    }
+
+    .lg_linearHeadBack{/* Rectangle 17 */        
+        background: linear-gradient(90deg, #074143 0%, #0E7E83 100%);
+    }
+    
+    .md_linearHeadBack{/* Rectangle 17 */        
+        background: linear-gradient(90deg, #0e7e83 20%, #24880b 80%);
+    }
+    .linearWhiteDownUp{
+        background: linear-gradient(0deg, rgba(238, 249, 243, 0.5) 0%, rgba(255, 255, 255, 0) 100%);
+        
+    }
+    .greenToBlue{
+        background: linear-gradient(-40deg, #24880bb4 10%, #0e7d83c9 80%);
+    }
+    .blueToGreen{
+        background: linear-gradient(40deg, #0e7d83c9 50%, #24880bb4 100%);
+    }
+    /* TextStyle */
+/* Heading */
+    .Heading_01{    
+        font-family: var(--FF-PT-Mono);
+        font-style: normal;
+        font-weight: 400;
+        font-size: 63px;
+        line-height: 115px;
+        text-transform:capitalize;   
+    }
+    .Heading_02{
+        font-family: var(--FF-PT-Mono);
+        font-style: normal;
+        font-weight: 400;
+        font-size: 50px;
+        line-height: 77px;
+        text-transform:capitalize;
+    }
+    .Heading_03{
+        font-family: var(--FF-PT-Mono);
+        font-style: normal;
+        font-weight: 400;
+        font-size: 36px;
+        line-height: 58px;
+        text-transform:capitalize;
+    }
+    .Heading_04{
+        font-family: var(--FF-PT-Mono);
+        font-style: normal;
+        font-weight: 300;
+        font-size: 30px;
+        line-height: 38px;
+        text-transform:capitalize;
+    }    
+    .Heading_05{
+        font-family: var(--FF-PT-Mono);
+        font-style: normal;
+        font-weight: 300;
+        font-size: 22px;
+        line-height: 38px;
+        text-transform:capitalize;
+    }
+    .Heading_06{
+        font-family: var(--FF-PT-Mono);
+        font-style: normal;
+        font-weight: 300;
+        font-size: 18px;
+        line-height: 38px;
+        text-transform:capitalize;
+    }
+    .Heading_07{
+        font-family: var(--FF-PT-Mono);
+        font-style: normal;
+        font-weight: 300;
+        font-size: 22px;
+        line-height: 16px;
+        text-transform:capitalize;
+    }
+    .Heading_Semi_Bold{
+        font-family: var(--FF-PT-Mono);
+        font-style: normal;
+        font-weight: 600;
+        font-size: 40px;
+        line-height: 36px;
+        text-transform:capitalize;
+    }
+    .Heading_Bold_01{
+        font-family: var(--FF-PT-Mono);
+        font-style: normal;
+        font-weight: 700;
+        font-size: 63px;
+        line-height: 115px;
+        text-transform:capitalize;
+    }
+    .Heading_Bold_02{
+        font-family: var(--FF-PT-Mono);
+        font-style: normal;
+        font-weight: 700;
+        font-size: 50px;
+        line-height: 77px;
+        text-transform:capitalize;
+    }
+    .Heading_Bold_03{
+        font-family: var(--FF-PT-Mono);
+        font-style: normal;
+        font-weight: 700;
+        font-size: 36px;
+        line-height: 58px;
+        text-transform:capitalize;
+    }
+    .Heading_Bold_04{
+        font-family: 'Lato';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 30px;
+        line-height: 38px;
+        text-transform:capitalize;
+    }
+    .Heading_Bold_05{
+        font-family: var(--FF-PT-Mono);
+        font-style: normal;
+        font-weight: 600;
+        font-size: 22px;
+        line-height: 38px;
+        text-transform:capitalize;
+    }
+    .Heading_Bold_06{
+        font-family: var(--FF-PT-Mono);
+        font-style: normal;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 38px;
+        text-transform:capitalize;
+    }
+    .Heading_Bold_07{
+        font-family: var(--FF-PT-Mono);
+        font-style: normal;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 38px;
+        text-transform:capitalize;
+    }
+/* Body */
+    .Body_01{
+        font-family:var(--FF-Lato) ;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 32px;
+        line-height: 34px;
+    }
+    .Body_02{
+        font-family:var(--FF-Lato) ;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 25px;
+        line-height: 24px;
+    }
+    .Body_03{
+        font-family:var(--FF-Lato) ;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 20px;
+    }
+    .Body_04{
+        font-family:var(--FF-Lato) ;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 18px;
+    }
+    .Body_05{
+        font-family:var(--FF-Lato) ;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 18px;
+    }
+    .Body_06{
+        font-family:var(--FF-Lato) ;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 16px;
+    }
+    .Body_Bold_00{
+        font-family:var(--FF-Lato) ;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 36px;
+        line-height: 44px;
+    }
+    .Body_Bold_01{
+        font-family:var(--FF-Lato) ;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 34px;
+    }
+    .Body_Bold_02{
+        font-family:var(--FF-Lato) ;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 25px;
+        line-height: 24px;
+    }
+    .Body_Bold_03{
+        font-family:var(--FF-Lato) ;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 20px;
+    }
+    .Body_Bold_04{
+        font-family:var(--FF-Lato) ;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 18px;
+    }
+    .Body_Bold_05{
+        font-family:var(--FF-Lato) ;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 18px;
+    }
+    .Body_Bold_06{
+        font-family:var(--FF-Lato) ;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 15px;
+        line-height: 16px;
+    }
+    /* End of TextStyle */
+    /* Heights section after Nav fix */
+    .xxlNavHeights{
+        height: calc(100vh - 6rem) ;
+    }
+    .xlNavHeights{
+        height: calc(100vh - 5rem) ;
+    }
+    .lgNavHeights{
+        height: calc(100vh - 74px) ;
+    }
+    .mdNavHeights{
+        height: calc(100vh - 68px) ;
+    }
+    .smNavHeights{
+        height: calc(100vh - 4rem) ;
+    }
+    .mobileNavHeights{
+        height: calc(100vh - 3rem) ;
+        width: 100vw;
+    }
+    
+        /* HomePage Heights md->mobile aren't valid yet */
+    .xxlNavHomeHeights{
+        height: calc(100vh - 175px) ;
+    }
+    .xlNavHomeHeights{
+        height: calc(100vh - 150px) ;
+    }
+    .lgNavHomeHeights{
+        height: calc(100vh - 135px) ;
+    }
+    .mdNavHomeHeights{
+        height: calc(100vh - 68px) ;
+    }
+    .smNavHomeHeights{
+        height: calc(100vh - 4rem) ;
+    }
+    .mobileNavHomeHeights{
+        height: calc(100vh - 3rem) ;
+        width: 100vw;
+    }
+    
+
+    /* Input form fixed size */
+    .xxl_Input_Size{
+        min-width:480px ;
+        height: 56px;
+    }
+    .xl_Input_Size{
+        width:440px ;
+        height: 46px;
+    }
+    .lg_Input_Size{
+        width:390px ;
+        height: 40px;
+    }
+    .md_Input_Size{
+        width:320px ;
+        height: 36px;
+    }
+    .sm_Input_Size{
+        width:280px ;
+        height: 32px;
+    }
+    .mobile_Input_Size{
+        width:270px ;
+        height: 32px;
+    }
+    
+
+/* This is For Challenge Summary */
+.Summary{
+  padding: 1rem;
+  padding-left: 2.2rem;
+  cursor: pointer;
+}
+
+.Summary::before{
+  content: '';
+  border-width: .4rem;
+  border-style: solid;
+  position: absolute;
+  top: 1.3rem;
+  left: 1rem;
+  transform: rotate(0);
+  transform-origin: .2rem 50%;
+  transition: .25s transform ease;
+}
+
+.Details{
+  width: 80%;
+  margin: 0 auto ;
+  margin-bottom: .5rem;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.Details[open] > summary:before {
+  transform: rotate(90deg);
+}
+
+.Details summary::-webkit-details-marker {
+  display:none;
+}
+
+    
+}
